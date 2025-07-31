@@ -1,4 +1,5 @@
 propietarios = {}
+placas = {}
 while True:
     print("--Menú--")
     print("1.- Ingresar propietario")
@@ -17,7 +18,6 @@ while True:
                 nombre = str(input("Ingrese el nombre del propietario: "))
                 telefono = int(input("Ingrese el número de telefono: "))
                 cantidad_vehiculos = int(input("Ingrese la cantidad de vehiculos a registrar: "))
-                placas = {}
                 for i in range(cantidad_vehiculos):
                     placa = str(input("Ingrese la placa del vehiculo: "))
                     marca = str(input("Ingrese la marca del vehiculo: "))
