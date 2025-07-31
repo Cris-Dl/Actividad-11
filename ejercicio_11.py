@@ -1,5 +1,4 @@
 propietarios = {}
-placas = {}
 while True:
     print("--Menú--")
     print("1.- Ingresar propietario")
@@ -18,6 +17,7 @@ while True:
                 nombre = str(input("Ingrese el nombre del propietario: "))
                 telefono = int(input("Ingrese el número de telefono: "))
                 cantidad_vehiculos = int(input("Ingrese la cantidad de vehiculos a registrar: "))
+                placas = {}
                 for i in range(cantidad_vehiculos):
                     placa = str(input("Ingrese la placa del vehiculo: "))
                     marca = str(input("Ingrese la marca del vehiculo: "))
@@ -36,13 +36,14 @@ while True:
                 print(f"Nombre: {datos['nombre']}")
                 print(f"Telefono: {datos['telefono']}")
                 print()
-                for placa, datos in placas.items():
-                    print(f"Placa: {placa}, Marcas:{datos['marca']}, Modelo:{datos['modelo']}, Año: {datos['ano']}, Pago: {datos['pago']}")
+            for placa, data in placas.items():
+                        print(f"Placa: {placa}, Marcas:{data['marca']}, Modelo:{data['modelo']}, Año: {data['ano']}, Pago: {data['pago']}")
         case "3":
             print("Buscar propietario")
         case "4":
             print("Verificación de pago")
         case "5":
             print("Saliendo del programa, gracias por su preferencia")
+            break
         case _:
             print("Valor invalido, vuelva a intentar")
