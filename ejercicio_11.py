@@ -23,7 +23,7 @@ while True:
                     marca = str(input("Ingrese la marca del vehiculo: "))
                     modelo = str(input("Ingrese el modelo del vehiculo: "))
                     ano_vehiculo = int(input("Ingrese el año del vehiculo: "))
-                    pago = str(input("Se tiene pagado el impuesto del vehiculo (Si/No)?: "))
+                    pago = str(input("Se tiene pagado el impuesto del vehiculo (Si/No)?: ")).lower()
                     placas[placa] = {"marca": marca, "modelo": modelo, "ano": ano_vehiculo, "pago": pago}
                     propietarios[nit] = {"nombre":nombre, "telefono":telefono, 'carros':placas}
                     print()
@@ -51,6 +51,17 @@ while True:
                 print()
         case "4":
             print("Verificación de pago")
+            pago = 0
+            no_pago = 0
+            for i in propietarios.values():
+                for j in i['carros'].values():
+                    if j['pago']=="si":
+                        pago+=1
+                    else:
+                        no_pago+=1
+            print(f"Cantidad de vehiculos que han pagado: {pago}")
+            print(f"Cantidad de vehiculos que no han pagado: {no_pago}")
+            print()
         case "5":
             print("Saliendo del programa, gracias por su preferencia")
             break
